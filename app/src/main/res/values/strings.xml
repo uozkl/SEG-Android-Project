@@ -6,5 +6,26 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_profile">Profile</string>
+    <string name="title_queue">Queue</string>
+    <string name="title_appointment">Appointment</string>
+    <string name="title_prescription">Prescription</string>
+    <string name="title_activity_queue">Queue</string>
+    <string name="title_activity_appointment">Appointment</string>
+    <string name="title_activity_appointment_info">AppointmentInfo</string>
+    <string name="title_activity_appointment_modify">AppointmentModify</string>
+    <string name="title_activity_prescription">Prescription</string>
+    <string name="title_activity_prescription_modify">PrescriptionModify</string>
+    <string name="title_activity_my_info">MyInfo</string>
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="yourclinic">Your Clinic</string>
+    <string name="currentnumber">Current Number</string>
+    <string name="yournumber">Your Number</string>
+    <string name="takeanumber">Take a number</string>
+    <string name="leavequeue">Leave queue</string>
+    <string name="none">--</string>
+    <string name="selectyourclinic">Select Your Clinic</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

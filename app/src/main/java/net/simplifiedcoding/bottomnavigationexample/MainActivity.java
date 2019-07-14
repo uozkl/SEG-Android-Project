@@ -6,7 +6,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
-import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 import java.lang.reflect.Field;
 import android.support.v7.app.AppCompatActivity;
@@ -40,16 +39,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new HomeFragment();
                 break;
 
-            case R.id.navigation_dashboard:
-                fragment = new DashboardFragment();
+            case R.id.navigation_queue:
+                fragment = new Queue();
                 break;
 
-            case R.id.navigation_notifications:
-                fragment = new NotificationsFragment();
+            case R.id.navigation_appointment:
+                fragment = new Appointment();
                 break;
 
-            case R.id.navigation_profile:
-                fragment = new ProfileFragment();
+            case R.id.navigation_prescription:
+                fragment = new Prescription();
+                break;
+
+            case R.id.navigation_myinfo:
+                fragment = new Myinfo();
                 break;
         }
 

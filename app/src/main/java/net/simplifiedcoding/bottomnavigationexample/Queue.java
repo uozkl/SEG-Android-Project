@@ -11,10 +11,10 @@ import android.view.ViewGroup;
  * Created by Belal on 1/23/2018.
  */
 
-public class ProfileFragment extends Fragment {
+public class Queue extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, null);
+        return inflater.inflate(R.layout.fragment_queue, null);
     }
 }
