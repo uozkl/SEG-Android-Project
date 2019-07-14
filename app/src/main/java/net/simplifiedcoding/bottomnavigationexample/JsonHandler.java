@@ -64,8 +64,14 @@ public class JsonHandler {
         return memberList;
     }
 
-    public void writeAppointment(ItemAppointment item){
+    public void addAppointment(ItemAppointment item){
         writeAppointment(item,true);
+    }
+
+    public void removeAppointmentById(String id){
+        long item_id=Long.parseLong(id);
+        writeAppointment(new ItemAppointment(item_id,"","",""),false);
+
     }
 
     public void writeAppointment(ItemAppointment item, Boolean isAdd){
@@ -83,20 +89,35 @@ public class JsonHandler {
                 curr_appointment.remove(index);
             }
         }
+        File file = new File(env+ "/appointments.json");
+        BufferedWriter output = null;
+        try {
+            System.out.println(file.exists());
+            if(!file.exists()){
+                file.createNewFile();}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            output = new BufferedWriter(new FileWriter(file));
+            output.write(curr_appointment.toString());
+            output.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+    public void removeAppointmentById(Long id){
+    }
+
 
     public void initJsonFile(){
         List<ItemAppointment> memberList = new ArrayList<>();
-        String filePath = Environment.getExternalStorageDirectory().toString()
-                + "/appointments.json";
-        System.out.println(filePath);
-        FileOutputStream fileOutputStream;
-        FileInputStream fileInputStream;
-        memberList.add(new ItemAppointment(1904051001,"15:30 April 5, 2019","Aydin Matthews","Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia"));
-        memberList.add(new ItemAppointment(1904251001,"d5:30 April 5, 2019","Aydin Matthews","Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia"));
-        memberList.add(new ItemAppointment(190351001,"45:30 April 5, 2019","Aydin Matthews","Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia"));
-        memberList.add(new ItemAppointment(190451001,"f5:30 April 5, 2019","Aydin Matthews","Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia"));
-        System.out.println(memberList);
+        String filePath = env + "/appointments.json";
+        memberList.add(new ItemAppointment(Long.parseLong("190405153001"),"15:30 April 5, 2019","Aydin Matthews","Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia"));
+        memberList.add(new ItemAppointment(Long.parseLong("190415093057"),"9:30 April 15, 2019","Gregory Frank","Quapia Hospital, 3861 rue Parc, Sherbrooke, Quebec"));
+        memberList.add(new ItemAppointment(Long.parseLong("190512110032"),"11:00 May 12, 2019","Nakita Browne","Landra Hospital, 4996 rue des Champs, Chicoutimi, Quebec"));
+        memberList.add(new ItemAppointment(Long.parseLong("190905160024"),"16:00  September 5, 2019","Esmay Pennington","Blicda Hospital, 3761 Runnymede Rd, Toronto, Ontario"));
+        memberList.add(new ItemAppointment(Long.parseLong("190409153026"),"15:30 April 9, 2019","Oskar Rush","Neako Hospital, 2031 Scotchmere Dr, Sarnia, Ontario"));
         JSONArray array = null;
         try {
             array = new JSONArray(memberList.toString());

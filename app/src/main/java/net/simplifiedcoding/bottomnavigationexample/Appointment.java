@@ -41,15 +41,6 @@ public class Appointment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         final RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        Button button = (Button) getActivity().findViewById(R.id.testbutton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG).show();
-                // ((MainActivity)getActivity()).loadFragment(new AppointmentInfo());
-
-            }
-        });
 
         memberList=new JsonHandler().readAppointment();
         recyclerView.setAdapter(new MemberAdapter(((MainActivity)getActivity()), memberList));
