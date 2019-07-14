@@ -96,12 +96,12 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 queueNumber.setText("--");
-                selectHospital = animalNameList[i];
-                editsearch.setQuery(animalNameList[i], false);
+                selectHospital = adapter.getItem(i).getAnimalName();
+                editsearch.setQuery(selectHospital, false);
                 editsearch.clearFocus();
                 Random rand = new Random();
-                randomNumber = rand.nextInt(50);
-                nextNumber = randomNumber+1;
+                randomNumber = rand.nextInt(50)+1;
+                nextNumber = randomNumber+rand.nextInt(15)+1;
                 currentNumber.setText(Integer.toString(randomNumber));
 
             }
