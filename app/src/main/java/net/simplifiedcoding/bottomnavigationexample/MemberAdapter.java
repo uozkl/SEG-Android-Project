@@ -36,7 +36,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "item clicked", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "id "+String.valueOf(member.getId())+" clicked", Toast.LENGTH_LONG).show();
                 context.loadFragment(new HomeFragment());
             }
         });
