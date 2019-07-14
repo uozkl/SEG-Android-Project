@@ -1,11 +1,15 @@
 package net.simplifiedcoding.bottomnavigationexample;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import java.lang.reflect.Field;
 import android.support.v7.app.AppCompatActivity;
@@ -15,63 +19,71 @@ import android.widget.Toast;
 //implement the interface OnNavigationItemSelectedListener in your activity class
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    public void testFunc(){
+    public void testFunc() {
         Toast.makeText(this, "Passed", Toast.LENGTH_LONG).show();
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 0;
 
-        //loading the default fragment
+        // loading the default fragment
         loadFragment(new HomeFragment());
 
-        //getting bottom navigation view and attaching the listener
+        // getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
-    }
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.READ_EXTERNAL_STORAGE },
+                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+        }
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
+                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+        }
+        new JsonHandler().initJsonFile();
 
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
 
         switch (item.getItemId()) {
-            case R.id.navigation_home:
-                fragment = new HomeFragment();
-                break;
+        case R.id.navigation_home:
+            fragment = new HomeFragment();
+            break;
 
-            case R.id.navigation_queue:
-                fragment = new Queue();
-                break;
+        case R.id.navigation_queue:
+            fragment = new Queue();
+            break;
 
-            case R.id.navigation_appointment:
-                fragment = new Appointment();
-                break;
+        case R.id.navigation_appointment:
+            fragment = new Appointment();
+            break;
 
-            case R.id.navigation_prescription:
-                fragment = new Prescription();
-                break;
+        case R.id.navigation_prescription:
+            fragment = new Prescription();
+            break;
 
-            case R.id.navigation_myinfo:
-                fragment = new Myinfo();
-                break;
+        case R.id.navigation_myinfo:
+            fragment = new Myinfo();
+            break;
         }
 
         return loadFragment(fragment);
     }
 
     public boolean loadFragment(Fragment fragment) {
-        //switching fragment
+        // switching fragment
         if (fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
             return true;
         }
         return false;
@@ -88,10 +100,10 @@ class BottomNavigationViewHelper {
             shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-                //noinspection RestrictedApi
+                // noinspection RestrictedApi
                 item.setShiftingMode(false);
                 // set once again checked value, so view will be updated
-                //noinspection RestrictedApi
+                // noinspection RestrictedApi
                 item.setChecked(item.getItemData().isChecked());
             }
         } catch (NoSuchFieldException e) {
