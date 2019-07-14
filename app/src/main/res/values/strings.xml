@@ -41,5 +41,10 @@
     <string name="edit">Edit</string>
     <string name="appointmentinfo">Appointment Information</string>
     <string name="inputhospital">Pleace input your hosptial</string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="date">Date</string>
+    <string name="sep">:</string>
+    <string name="editappo">Edit Appointment</string>
 
 </resources>
