@@ -51,42 +51,7 @@ public class Appointment extends Fragment {
             }
         });
 
-        try {
-            InputStream fileInputStream = getActivity().getAssets().open("appointments.json");
-            @SuppressWarnings("resource")
-            JsonReader jsonReader = new JsonReader(new InputStreamReader(fileInputStream, "UTF-8"));
-            jsonReader.beginArray();
-            while (jsonReader.hasNext()) {
-                jsonReader.beginObject();
-                long new_id=-1;
-                String new_doctor =null;
-                String new_location =null;
-                String new_time =null;
-                while (jsonReader.hasNext()) {
-                    String name = jsonReader.nextName();
-                    if (name.equals("location")) {
-                        new_location=jsonReader.nextString();
-                    }
-                    if (name.equals("doctor")) {
-                        new_doctor=jsonReader.nextString();
-                    }
-                    if (name.equals("id")) {
-                        new_id=jsonReader.nextLong();
-                    }
-                    if (name.equals("time")) {
-                        new_time=jsonReader.nextString();
-                    }
-                }
-                System.out.println((new_location+new_time)+new_doctor);
-                memberList.add(new ItemAppointment(new_id,new_time,new_doctor,new_location));
-                jsonReader.endObject();
-            }
-            jsonReader.endArray();
-            jsonReader.close();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        memberList=new JsonHandler().readAppointment();
         recyclerView.setAdapter(new MemberAdapter(((MainActivity)getActivity()), memberList));
 
     }

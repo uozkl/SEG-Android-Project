@@ -48,4 +48,9 @@ public class ItemAppointment {
         this.location = location;
     }
 
+    @Override
+    public String toString(){
+        return "{\"id\":\""+this.id+"\",\"time\":\""+this.time+"\",\"doctor\":\""+this.doctor+"\",\"location\":\""+this.location+"\"}";
+    }
+
 }
