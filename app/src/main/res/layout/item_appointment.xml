@@ -83,9 +83,11 @@
 
         <TextView
             android:id="@+id/text_loaction"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="Ottawa Hostpital"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/text_doctor"
             app:layout_constraintTop_toTopOf="@+id/textView14" />
 

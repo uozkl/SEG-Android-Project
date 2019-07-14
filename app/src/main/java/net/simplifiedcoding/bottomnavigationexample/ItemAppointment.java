@@ -1,7 +1,7 @@
 package net.simplifiedcoding.bottomnavigationexample;
 
 public class ItemAppointment {
-    private int id;
+    private long id;
     private String time;
     private String doctor;
     private String location;
@@ -10,14 +10,14 @@ public class ItemAppointment {
     }
 
 
-    public ItemAppointment(int id, String time, String doctor, String location) {
+    public ItemAppointment(long id, String time, String doctor, String location) {
         super();
         this.id = id;
         this.time = time;
         this.doctor = doctor;
         this.location = location;
     }
-    public int getId() {
+    public long getId() {
         return id;
     }
 

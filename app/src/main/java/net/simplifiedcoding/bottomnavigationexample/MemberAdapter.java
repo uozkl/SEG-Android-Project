@@ -12,10 +12,10 @@ import android.widget.Toast;
 import java.util.List;
 
 public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder> {
-    private Context context;
+    private MainActivity context;
     private List<ItemAppointment> memberList;
 
-    MemberAdapter(Context context, List<ItemAppointment> memberList) {
+    MemberAdapter(MainActivity context, List<ItemAppointment> memberList) {
         this.context = context;
         this.memberList = memberList;
     }
@@ -37,6 +37,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "item clicked", Toast.LENGTH_LONG).show();
+                context.loadFragment(new HomeFragment());
             }
         });
     }
