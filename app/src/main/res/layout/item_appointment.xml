@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <TextView
-            android:id="@+id/text_time"
+            android:id="@+id/text_info_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="13:00, April 15, 2019 "
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="John Smith"
-            app:layout_constraintStart_toStartOf="@+id/text_time"
+            app:layout_constraintStart_toStartOf="@+id/text_info_time"
             app:layout_constraintTop_toTopOf="@+id/textView16" />
 
         <TextView

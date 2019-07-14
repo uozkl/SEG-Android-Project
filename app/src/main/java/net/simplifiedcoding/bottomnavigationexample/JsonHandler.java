@@ -6,10 +6,12 @@ import android.util.JsonReader;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -125,21 +127,66 @@ public class JsonHandler {
             e.printStackTrace();
         }
 
-        File file = new File(filePath);
+        File appointmentFile = new File(filePath);
         BufferedWriter output = null;
         try {
-            System.out.println(file.exists());
-            if(!file.exists()){
-                file.createNewFile();}
+            System.out.println(appointmentFile.exists());
+            if(!appointmentFile.exists()){
+                appointmentFile.createNewFile();}
         } catch (IOException e) {
             e.printStackTrace();
         }
         try {
-            output = new BufferedWriter(new FileWriter(file));
+            output = new BufferedWriter(new FileWriter(appointmentFile));
             output.write(array.toString());
             output.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setAppointmentSelection(String id){
+        File file = new File(env+ "/appointmentSelection");
+        BufferedWriter output = null;
+        try {
+            if(!file.exists()){
+                file.createNewFile();}
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            output = new BufferedWriter(new FileWriter(file));
+            output.write(id);
+            output.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ItemAppointment getAppointmentSelection(){
+        File file = new File(env+ "/appointmentSelection");
+        StringBuilder text = new StringBuilder();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+            }
+            br.close();
+        }
+        catch (IOException e) {
+            //You'll need to add proper error handling here
+        }
+        System.out.println(text);
+        Long id=Long.parseLong(text.toString());
+        ItemAppointment res=new ItemAppointment(id,"","","");
+        List<ItemAppointment> memberList=readAppointment();
+        for(int i=0; i<memberList.size();i++){
+            if(memberList.get(i).getId()==id){
+                res=memberList.get(i);
+            }
+        }
+        return res;
     }
 }
