@@ -3,6 +3,7 @@ package net.simplifiedcoding.bottomnavigationexample;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -48,7 +49,7 @@ public class Appointment extends Fragment {
         memberList.add(new ItemAppointment(9, "houlongthecape3","baishatunbeach1",  "後龍3"));
 
         RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new MemberAdapter(getActivity(), memberList));
     }
 
