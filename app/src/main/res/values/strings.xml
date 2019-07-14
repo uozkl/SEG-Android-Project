@@ -40,5 +40,6 @@
     <string name="addrexp">Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia</string>
     <string name="edit">Edit</string>
     <string name="appointmentinfo">Appointment Information</string>
+    <string name="inputhospital">Pleace input your hosptial</string>
 
 </resources>
