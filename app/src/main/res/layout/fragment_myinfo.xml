@@ -17,7 +17,7 @@
         android:layout_marginLeft="216dp"
         android:layout_marginTop="510dp"
         android:background="#FF5722"
-        android:text="Change Password"
+        android:text="LOGOUT"
         android:textColor="#FFFFFF" />
 
     <TextView

@@ -1,5 +1,6 @@
 package net.simplifiedcoding.bottomnavigationexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ public class Myinfo extends Fragment {
     TextView emailText;
     TextView telText;
     Button editInfo;
+    Button logout;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,6 +39,14 @@ public class Myinfo extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).loadFragment(new MyInfoEdit());
+            }
+        });
+        logout = (Button)view.findViewById(R.id.editInfoButton2);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Signin.class);
+                startActivity(intent);
             }
         });
         return view;
