@@ -115,8 +115,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="176dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="For 30 days"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -138,12 +138,11 @@
                         android:id="@+id/textView246947"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="151dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
                         android:text="@string/med1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="@+id/text_info_time6947" />
 
                     <TextView
                         android:id="@+id/textView266497"
@@ -255,8 +254,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="176dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="For 25 days"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -278,12 +277,11 @@
                         android:id="@+id/textView24697"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="151dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="Take 30ml twice a day"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="@+id/text_info_time697" />
 
                     <TextView
                         android:id="@+id/textView26697"
@@ -372,8 +370,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="176dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="For 14 days"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -395,12 +393,11 @@
                         android:id="@+id/textView2469"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="151dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="@string/med1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="@+id/text_info_time69" />
 
                     <TextView
                         android:id="@+id/textView2669"
@@ -489,8 +486,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="176dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="For 30 days"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -513,8 +510,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="151dp"
-                        android:layout_marginEnd="44dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
                         android:text="Chew 1 tablet once a day"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -549,6 +546,7 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="22dp"
         android:text="@string/myprescription"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -12,11 +12,14 @@ import android.widget.Button;
 import android.content.Intent;
 import android.widget.RelativeLayout;
 
+import java.util.List;
+
 /**
  * Created by Belal on 1/23/2018.
  */
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
+    private CardView cardview1,cardview2;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,31 +30,42 @@ public class HomeFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_home, null);
         TextView displayQueueInfo = view.findViewById(R.id.textView29);
         TextView displayAppointment = view.findViewById(R.id.appointTextView1);
-        Button editAppointment = view.findViewById(R.id.appointButton);
-        Button editQueue = view.findViewById(R.id.button5);
-        displayAppointment.setText("Appointment#"+new JsonHandler().readAppointment().get(0).getId()+"\n"+
-                "Doctor: "+new JsonHandler().readAppointment().get(0).getDoctor()+"\n"+
-                "Time: "+new JsonHandler().readAppointment().get(0).getTime());
-        editQueue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).loadFragment(new Queue());
-            }
-        });
-        editAppointment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).loadFragment(new AppointmentEdit());
-            }
-        });
+
+        JsonHandler jsonHandler=new JsonHandler();
+
+        List<ItemAppointment> appList =jsonHandler.readAppointment();
+        if(appList.size()>0){
+            ItemAppointment currAppointment= jsonHandler.readAppointment().get(0);
+            String[] curr_address=currAppointment.getLocation().split(",");
+            displayAppointment.setText(currAppointment.getTime()+"\nDoctor "+currAppointment.getDoctor()+"\n"+curr_address[0]);
+        }
+
+
         if(((MainActivity)getActivity()).getHospital().equals("")){
             displayQueueInfo.setText("Currently no number in queue");
         }
         else{
             displayQueueInfo.setText(((MainActivity)getActivity()).getHospital()
-            +"\n Current Number:"+((MainActivity)getActivity()).getCurrentNumber()
-            +"\n Your Number:"+((MainActivity)getActivity()).getMyNumber());
+            +"\nCurrent Number: "+((MainActivity)getActivity()).getCurrentNumber()
+            +"\nYour Number: "+((MainActivity)getActivity()).getMyNumber());
         }
         return view;
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        cardview1=(CardView)getActivity().findViewById(R.id.homeCardView);
+        cardview2=(CardView)getActivity().findViewById(R.id.appointCardView);
+        cardview1.setOnClickListener(this);
+        cardview2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.appointCardView : ((MainActivity)getActivity()).loadFragment(new Appointment());break;
+            case R.id.homeCardView : ((MainActivity)getActivity()).loadFragment(new Queue());break;
+            default:break;
+        }
     }
 }

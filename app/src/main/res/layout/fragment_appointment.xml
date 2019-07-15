@@ -25,7 +25,8 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="22dp"
         android:text="@string/myappointmentinfo"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_add"
@@ -41,6 +42,8 @@
         android:layout_marginRight="23dp"
         android:layout_toEndOf="@+id/textView3"
         android:layout_toRightOf="@+id/textView3"
-        android:text="@string/add" />
+        android:background="#3F51B5"
+        android:text="New"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
