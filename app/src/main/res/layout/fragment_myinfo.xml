@@ -56,7 +56,7 @@
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
         android:layout_marginTop="332dp"
-        android:text="paw@gmail.com"
+        android:text="admin@gmail.com"
         android:textSize="25sp" />
 
     <android.support.v7.widget.CardView
@@ -93,7 +93,7 @@
                 android:layout_marginStart="96dp"
                 android:layout_marginLeft="96dp"
                 android:layout_marginTop="8dp"
-                android:text="1949/02/12"
+                android:text="1939/02/12"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
