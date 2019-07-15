@@ -1,6 +1,6 @@
 package net.simplifiedcoding.bottomnavigationexample;
 
-public class ItemAppointment {
+public class ItemAppointment implements Comparable<ItemAppointment> {
     private long id;
     private String time;
     private String doctor;
@@ -51,6 +51,18 @@ public class ItemAppointment {
     @Override
     public String toString(){
         return "{\"id\":\""+this.id+"\",\"time\":\""+this.time+"\",\"doctor\":\""+this.doctor+"\",\"location\":\""+this.location+"\"}";
+    }
+
+    @Override
+    public int compareTo(ItemAppointment arg0) {
+        // TODO Auto-generated method stub
+        if(id > arg0.id){
+            return 1;
+        }
+        if (id < arg0.id) {
+            return -1;
+        }
+        return 0;
     }
 
 }
