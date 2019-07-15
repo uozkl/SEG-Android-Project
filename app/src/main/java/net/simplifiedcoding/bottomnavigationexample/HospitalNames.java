@@ -1,14 +1,14 @@
 package net.simplifiedcoding.bottomnavigationexample;
 
 public class HospitalNames {
-    private String animalName;
+    private String name;
 
-    public HospitalNames(String animalName) {
-        this.animalName = animalName;
+    public HospitalNames(String name) {
+        this.name = name;
     }
 
-    public String getAnimalName() {
-        return this.animalName;
+    public String getHospitalName() {
+        return this.name;
     }
 
 }
