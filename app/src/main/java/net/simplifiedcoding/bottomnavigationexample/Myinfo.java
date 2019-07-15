@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Button;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -17,14 +21,30 @@ import java.util.List;
  */
 
 public class Myinfo extends Fragment {
+    TextView emailText;
+    TextView telText;
+    Button editInfo;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_myinfo, null);
+        View view = inflater.inflate(R.layout.fragment_myinfo, null);
+        emailText = (TextView) view.findViewById(R.id.textView42);
+        emailText.setText(((MainActivity)getActivity()).getEmail());
+        telText = (TextView) view.findViewById(R.id.textView44);
+        telText.setText(((MainActivity)getActivity()).getTel());
+        editInfo = (Button) view.findViewById(R.id.editInfoButton);
+        editInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).loadFragment(new MyInfoEdit());
+            }
+        });
+        return view;
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        emailText.setText(((MainActivity)getActivity()).getEmail());
+        telText.setText(((MainActivity)getActivity()).getTel());
     }
 }

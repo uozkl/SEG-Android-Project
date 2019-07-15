@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     String myNumber = "";
     String hospital= "";
 
+    String email = "padsd@gmail.com";
+    String tel = "613-255-2321";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +101,22 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         hospital = hosp;
         currentNumber = cNum;
         myNumber = mNum;
+    }
+
+    public void setEmail(String inputEmail){
+        email = inputEmail;
+    }
+
+    public void setTel(String inputTel){
+        tel = inputTel;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public String getTel(){
+        return tel;
     }
 
     public String getMyNumber(){
