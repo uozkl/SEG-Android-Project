@@ -13,9 +13,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="216dp"
-        android:layout_marginLeft="216dp"
-        android:layout_marginTop="510dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="122dp"
+        android:layout_marginTop="516dp"
         android:background="#FF5722"
         android:text="LOGOUT"
         android:textColor="#FFFFFF" />
@@ -27,9 +27,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="453dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="372dp"
         android:text="613-233-1000"
         android:textSize="25sp" />
 
@@ -40,9 +40,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="453dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="372dp"
         android:text="Tel: "
         android:textSize="25sp" />
 
@@ -53,9 +53,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="413dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="332dp"
         android:text="paw@gmail.com"
         android:textSize="25sp" />
 
@@ -67,88 +67,129 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="118dp"
-        app:cardBackgroundColor="@android:color/holo_blue_light">
+        android:layout_marginTop="92dp"
+        app:cardBackgroundColor="#00B0FF">
 
-        <TextView
-            android:id="@+id/textView41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="180dp"
-            android:text="1994/02/12"
-            android:textSize="20sp" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="150dp"
-            android:text="D.O.B:"
-            android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="36dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/sample_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="60dp"
-            android:text="Jack"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="96dp"
+                android:layout_marginLeft="96dp"
+                android:layout_marginTop="8dp"
+                android:text="1994/02/12"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/textView40"
+                app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
-        <TextView
-            android:id="@+id/textView38"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="120dp"
-            android:text="2410005"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:text="Michael"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/textView35"
+                app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
-        <TextView
-            android:id="@+id/textView37"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="90dp"
-            android:text="Policy Number:"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="32dp"
+                android:text="NAME:"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="60dp"
-            android:text="Michael"
-            android:textSize="20sp" />
+            <Button
+                android:id="@+id/editInfoButton"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:drawableBottom="@android:drawable/ic_menu_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/sample_avatar" />
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Perry"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintStart_toEndOf="@+id/textView36"
+                app:layout_constraintTop_toTopOf="@+id/textView36" />
 
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="30dp"
-            android:text="NAME:"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:text="Date of Birth"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="160dp"
-            android:text="Change Avatar" />
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:text="Username"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="140dp"
+                android:layout_marginLeft="140dp"
+                android:text="admin"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/textView37"
+                app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+        </android.support.constraint.ConstraintLayout>
+
     </android.support.v7.widget.CardView>
 
     <TextView
@@ -158,9 +199,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="413dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="332dp"
         android:text="Email:"
         android:textSize="25sp" />
 
@@ -171,38 +212,26 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="22dp"
         android:text="My Info"
-        android:textSize="45dp" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="251dp"
-        android:layout_height="47dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="373dp"
-        android:text="USERNAME: admin"
-        android:textSize="25sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/editInfoButton"
+        android:id="@+id/button_insurance"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="177dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="510dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="440dp"
         android:background="#3F51B5"
-        android:text="Edit Info"
+        android:text="My insurance info"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>

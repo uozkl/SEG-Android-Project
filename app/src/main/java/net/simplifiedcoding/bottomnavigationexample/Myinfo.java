@@ -41,6 +41,13 @@ public class Myinfo extends Fragment {
                 ((MainActivity)getActivity()).loadFragment(new MyInfoEdit());
             }
         });
+        Button insur = (Button) view.findViewById(R.id.button_insurance);
+        insur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).loadFragment(new Insurance());
+            }
+        });
         logout = (Button)view.findViewById(R.id.editInfoButton2);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -44,7 +44,7 @@ public class MyInfoEdit extends Fragment {
             }
         });
 
-        cancel =(Button)view.findViewById(R.id.editInfoButton3);
+        cancel =(Button)view.findViewById(R.id.button_back);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
