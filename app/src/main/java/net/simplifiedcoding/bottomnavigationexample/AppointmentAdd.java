@@ -213,7 +213,7 @@ public class AppointmentAdd extends Fragment {
                         jsonHandler.addAppointment(new_item);
                         jsonHandler.removeAppointmentById(String.valueOf(item.getId()));
                         ((MainActivity)getActivity()).loadFragment(new Appointment());
-                        Toast.makeText(getActivity(), "Appointment updated ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Appointment added ", Toast.LENGTH_LONG).show();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -226,7 +226,7 @@ public class AppointmentAdd extends Fragment {
     public long genId(){
         String year,month,date,hour,minute,ran;
         year=spinner_y.getSelectedItem().toString().substring(2,4);
-        month=String.valueOf(spinner_m.getSelectedItemId());
+        month=String.valueOf(spinner_m.getSelectedItemId()+1);
         if(month.length()==1){
             month="0"+month;
         }

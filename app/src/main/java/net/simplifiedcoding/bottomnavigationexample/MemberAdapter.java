@@ -34,7 +34,6 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "id "+String.valueOf(member.getId())+" clicked", Toast.LENGTH_LONG).show();
                 JsonHandler jsonHandler=new JsonHandler();
                 jsonHandler.setAppointmentSelection(String.valueOf(member.getId()));
                 System.out.println(jsonHandler.getAppointmentSelection());
