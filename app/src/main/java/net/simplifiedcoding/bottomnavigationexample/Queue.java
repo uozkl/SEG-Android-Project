@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Button;
 import java.util.Random;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 
@@ -66,7 +65,6 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
 
         takeNumberButton = (Button) view.findViewById(R.id.button3);
         leaveQueueButton = (Button) view.findViewById(R.id.button4);
-
         takeNumberButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 if(selectHospital.equals("")||nextNumber==-1){
@@ -74,6 +72,7 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
                 }
                 else{
                     queueNumber.setText(Integer.toString(nextNumber));
+                    ((MainActivity)getActivity()).setQueue(selectHospital,Integer.toString(randomNumber),Integer.toString(nextNumber));
                 }
             }
         });
@@ -81,12 +80,14 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
         leaveQueueButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 if(selectHospital.equals("")||nextNumber==-1){
+                    ((MainActivity)getActivity()).setQueue("","","");
                     Toast.makeText(getView().getContext(),"You do not have taken any number",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     nextNumber = -1;
                     randomNumber = -1;
                     queueNumber.setText("--");
+                    ((MainActivity)getActivity()).setQueue("","","");
                 }
             }
         });
@@ -109,6 +110,16 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
 
 
         return view;
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(!((MainActivity)getActivity()).getHospital().equals("")){
+            editsearch.setQuery(((MainActivity)getActivity()).getHospital(), false);
+            editsearch.clearFocus();
+            currentNumber.setText(((MainActivity)getActivity()).getCurrentNumber());
+            queueNumber.setText(((MainActivity)getActivity()).getMyNumber());
+        }
     }
 
     @Override

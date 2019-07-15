@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Toast.makeText(this, "Passed", Toast.LENGTH_LONG).show();
     }
 
+    String currentNumber = "";
+    String myNumber = "";
+    String hospital= "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +91,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             return true;
         }
         return false;
+    }
+
+    public void setQueue(String hosp,String cNum,String mNum){
+        hospital = hosp;
+        currentNumber = cNum;
+        myNumber = mNum;
+    }
+
+    public String getMyNumber(){
+        return myNumber;
+    }
+
+    public String getHospital(){
+        return hospital;
+    }
+
+    public String getCurrentNumber(){
+        return currentNumber;
     }
 }
 
