@@ -217,8 +217,8 @@ public class AppointmentEdit extends Fragment {
                         String time_string= genTime();
                         long id_long=genId();
                         ItemAppointment new_item=new ItemAppointment(id_long,time_string,doc_string,location_string+", "+address_string);
-                        jsonHandler.addAppointment(new_item);
                         jsonHandler.removeAppointmentById(String.valueOf(item.getId()));
+                        jsonHandler.addAppointment(new_item);
                         ((MainActivity)getActivity()).loadFragment(new Appointment());
                         Toast.makeText(getActivity(), "Appointment updated ", Toast.LENGTH_LONG).show();
                     }
@@ -249,7 +249,7 @@ public class AppointmentEdit extends Fragment {
     public long genId(){
         String year,month,date,hour,minute,ran;
         year=spinner_y.getSelectedItem().toString().substring(2,4);
-        month=String.valueOf(spinner_m.getSelectedItemId());
+        month=String.valueOf(spinner_m.getSelectedItemId()+1);
         if(month.length()==1){
             month="0"+month;
         }

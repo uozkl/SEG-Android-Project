@@ -51,5 +51,10 @@
     <string name="submitrequest">Submit Request</string>
     <string name="address">Address</string>
     <string name="addressexp">2586 Essendene Avenue, Abbotsford, British Columbia</string>
+    <string name="myprescription">My Prescription</string>
+    <string name="prescriptionnum">Prescription#</string>
+    <string name="medication">Medication</string>
+    <string name="Note">Note</string>
+    <string name="med1">Chew 2 tablets 3 times a day</string>
 
 </resources>
