@@ -45,6 +45,13 @@ public class Appointment extends Fragment {
         memberList=new JsonHandler().readAppointment();
         recyclerView.setAdapter(new MemberAdapter(((MainActivity)getActivity()), memberList));
 
+        final Button button_back = (Button) getActivity().findViewById(R.id.button_add);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).loadFragment(new AppointmentAdd());
+                // your handler code here
+            }
+        });
     }
 
 }

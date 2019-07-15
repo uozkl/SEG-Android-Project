@@ -27,7 +27,7 @@ import java.util.Random;
  * Created by Belal on 1/23/2018.
  */
 
-public class AppointmentEdit extends Fragment {
+public class AppointmentAdd extends Fragment {
 
     private static final String [] year ={"2019","2020","2021"};
     private static final String [] month ={"January","February","March","April","May","June","July","August","September","October","November","December"};
@@ -92,7 +92,7 @@ public class AppointmentEdit extends Fragment {
             "3043 Grand Autumn Close, Glen Buell, Ontario",
             "9886 Hazy Bay, Key Junction, Ontario"
     };
-    ItemAppointment item=new JsonHandler().getAppointmentSelection();
+    ItemAppointment item=new ItemAppointment(Long.parseLong("190101000000"),"","","");
     Spinner spinner_y =null;
     Spinner spinner_m =null;
     Spinner spinner_d =null;
@@ -102,7 +102,7 @@ public class AppointmentEdit extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_appointment_edit, null);
+        return inflater.inflate(R.layout.fragment_appointment_add, null);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -110,7 +110,7 @@ public class AppointmentEdit extends Fragment {
         final Button button_back = (Button) getActivity().findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ((MainActivity)getActivity()).loadFragment(new AppointmentInfo());
+                ((MainActivity)getActivity()).loadFragment(new Appointment());
                 // your handler code here
             }
         });
@@ -118,12 +118,6 @@ public class AppointmentEdit extends Fragment {
         button_submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onSubmitButtonPressed();
-            }
-        });
-        final Button button_cancel = (Button) getActivity().findViewById(R.id.button_cancel);
-        button_cancel.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onCancelButtonPressed();
             }
         });
 
@@ -185,10 +179,9 @@ public class AppointmentEdit extends Fragment {
                 t.setText(address[new Random().nextInt(address.length)]);
             }
         });
-        final String[] curr_address=item.getLocation().split(",");
-        location.setText(curr_address[0]);
+        location.setText("");
         t=(TextView)getActivity().findViewById(R.id.text_info_address);
-        t.setText((curr_address[1]+", "+curr_address[2]+", "+curr_address[3]));
+        t.setText("");
 
 
     }
@@ -221,22 +214,6 @@ public class AppointmentEdit extends Fragment {
                         jsonHandler.removeAppointmentById(String.valueOf(item.getId()));
                         ((MainActivity)getActivity()).loadFragment(new Appointment());
                         Toast.makeText(getActivity(), "Appointment updated ", Toast.LENGTH_LONG).show();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                }).show();
-    }
-    public void onCancelButtonPressed() {
-        new AlertDialog.Builder(getActivity()).setTitle("Do you want to cancel this appointment?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        new JsonHandler().removeAppointmentById(String.valueOf(item.getId()));
-                        ((MainActivity)getActivity()).loadFragment(new Appointment());
-                        Toast.makeText(getActivity(), "Appointment Canceled", Toast.LENGTH_LONG).show();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
