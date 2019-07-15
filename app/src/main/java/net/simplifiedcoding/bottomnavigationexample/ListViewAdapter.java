@@ -58,7 +58,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         // Set the results into TextViews
-        holder.name.setText(hospitalNamesList.get(position).getAnimalName());
+        holder.name.setText(hospitalNamesList.get(position).getHospitalName());
         return view;
     }
 
@@ -70,7 +70,7 @@ public class ListViewAdapter extends BaseAdapter {
             hospitalNamesList.addAll(arraylist);
         } else {
             for (HospitalNames wp : arraylist) {
-                if (wp.getAnimalName().toLowerCase(Locale.getDefault()).contains(charText)) {
+                if (wp.getHospitalName().toLowerCase(Locale.getDefault()).contains(charText)) {
                     hospitalNamesList.add(wp);
                 }
             }
