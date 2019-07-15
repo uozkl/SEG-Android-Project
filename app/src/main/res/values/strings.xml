@@ -37,7 +37,7 @@
     <string name="phone">Telephone Number</string>
     <string name="appointmentnumber">Appointment Number</string>
     <string name="back">Back</string>
-    <string name="addrexp">Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia</string>
+    <string name="addrexp">Naneviet Hospital</string>
     <string name="edit">Edit</string>
     <string name="appointmentinfo">Appointment Information</string>
     <string name="inputhospital">Pleace input your hosptial</string>
@@ -46,5 +46,10 @@
     <string name="date">Date</string>
     <string name="sep">:</string>
     <string name="editappo">Edit Appointment</string>
+    <string name="appochange">Appointment Change Request</string>
+    <string name="cancelrequest">Cancel Appointment</string>
+    <string name="submitrequest">Submit Request</string>
+    <string name="address">Address</string>
+    <string name="addressexp">2586 Essendene Avenue, Abbotsford, British Columbia</string>
 
 </resources>
