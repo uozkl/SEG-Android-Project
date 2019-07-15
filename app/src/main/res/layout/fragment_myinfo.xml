@@ -93,7 +93,7 @@
                 android:layout_marginStart="96dp"
                 android:layout_marginLeft="96dp"
                 android:layout_marginTop="8dp"
-                android:text="1994/02/12"
+                android:text="1949/02/12"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
