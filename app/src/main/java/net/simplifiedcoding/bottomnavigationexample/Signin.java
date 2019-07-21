@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.os.Bundle;
 import android.widget.Toast;
 
+//Handler for signin page
 public class Signin extends AppCompatActivity{
     EditText userName;
     EditText password;
@@ -18,6 +19,7 @@ public class Signin extends AppCompatActivity{
         password = findViewById(R.id.editText);
     }
 
+    //click handler
     public void loginClick(View v){
         String userNameText = userName.getText().toString();
         String passwordText = password.getText().toString();
@@ -29,11 +31,13 @@ public class Signin extends AppCompatActivity{
         }
     }
 
+    //click handler
     public void signupClick(View v){
         Intent intent = new Intent(this, Signup.class);
         startActivity(intent);
     }
 
+    //trigger the page
     public void openWelcome(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
