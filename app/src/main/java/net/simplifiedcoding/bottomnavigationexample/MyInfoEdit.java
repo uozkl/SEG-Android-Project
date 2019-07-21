@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//Created by Anbo
+
+//Created handler for edit function
 public class MyInfoEdit extends Fragment {
     String newTel;
     EditText displayTel;
@@ -20,6 +23,7 @@ public class MyInfoEdit extends Fragment {
     Button cancel;
     @Nullable
     @Override
+    //handler
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_myinfo_edit, null);
         displayTel = (EditText)view.findViewById(R.id.editText3);
@@ -54,6 +58,7 @@ public class MyInfoEdit extends Fragment {
         return view;
     }
 
+    //handler
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
