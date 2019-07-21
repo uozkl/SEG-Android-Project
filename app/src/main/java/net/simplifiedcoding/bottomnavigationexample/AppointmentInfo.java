@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 /**
- * Created by Belal on 1/23/2018.
+ * Created by Zekun.
  */
 
 public class AppointmentInfo extends Fragment {
