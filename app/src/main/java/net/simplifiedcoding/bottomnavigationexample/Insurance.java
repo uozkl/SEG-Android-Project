@@ -18,9 +18,11 @@ public class Insurance extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Display fragments
         return inflater.inflate(R.layout.fragment_insurance, null);
     }
     public void onActivityCreated(Bundle savedInstanceState) {
+        //Add listener to the button
         super.onActivityCreated(savedInstanceState);
 
         final Button button_back = (Button) getActivity().findViewById(R.id.button_back_insurance);
