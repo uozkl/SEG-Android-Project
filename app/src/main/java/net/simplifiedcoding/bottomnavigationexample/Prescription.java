@@ -38,10 +38,12 @@ public class Prescription extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Show fragment
         return inflater.inflate(R.layout.fragment_prescription, null);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
+        //Button listener for four different cards
         super.onActivityCreated(savedInstanceState);
 
         cardview1=(CardView)getActivity().findViewById(R.id.card1);
@@ -58,6 +60,7 @@ public class Prescription extends Fragment implements View.OnClickListener{
     }
     @Override
     public void onClick(View v){
+        //card onclick event
         switch (v.getId()){
             case R.id.card1 : ((MainActivity)getActivity()).loadFragment(new PrescriptionInfo1());break;
             case R.id.card2 : ((MainActivity)getActivity()).loadFragment(new PrescriptionInfo2());break;
