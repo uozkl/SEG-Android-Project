@@ -27,6 +27,8 @@ public class AppointmentInfo extends Fragment {
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
+        //Fill the detail info the textview
+        //Generate a random phone number
         super.onActivityCreated(savedInstanceState);
 
         ItemAppointment item=new JsonHandler().getAppointmentSelection();
