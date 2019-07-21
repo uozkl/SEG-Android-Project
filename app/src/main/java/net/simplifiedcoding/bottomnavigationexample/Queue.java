@@ -15,7 +15,7 @@ import java.util.Random;
 import android.widget.Toast;
 import java.util.ArrayList;
 
-
+//Created fragment for Queue view. 
 public class Queue extends Fragment implements SearchView.OnQueryTextListener{
     // Declare Variables
     ListView list;
@@ -34,6 +34,7 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
 
     @Nullable
     @Override
+    //Handler
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_queue, null);
 
@@ -112,6 +113,7 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
         return view;
     }
 
+    //handler
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if(!((MainActivity)getActivity()).getHospital().equals("")){
@@ -123,12 +125,14 @@ public class Queue extends Fragment implements SearchView.OnQueryTextListener{
     }
 
     @Override
+    //Stop the keyboard jump out
     public boolean onQueryTextSubmit(String query) {
 
         return false;
     }
 
     @Override
+    //listner for query text change
     public boolean onQueryTextChange(String newText) {
         String text = newText;
         adapter.filter(text);
