@@ -9,6 +9,11 @@ import android.widget.Toast;
 
 import java.util.List;
 
+/**
+ * Created by Zekun.
+ */
+
+//Adapter for all members
 public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder> {
     private MainActivity context;
     private List<ItemAppointment> memberList;
@@ -43,11 +48,12 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
     }
 
     @Override
+    //Count item
     public int getItemCount() {
         return memberList.size();
     }
 
-    //Adapter 需要一個 ViewHolder，只要實作它的 constructor 就好，保存起來的view會放在itemView裡面
+    //Adapter need a ViewHolder,can be treated as constructor. Saved view will be put inside itemView.
     class ViewHolder extends RecyclerView.ViewHolder{
         TextView textId, textDoctor, textLocation, textTime;
         ViewHolder(View itemView) {
