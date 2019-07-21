@@ -37,6 +37,8 @@ public class Appointment extends Fragment {
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
+        //Generate the list in the recycler view
+        //Add listener to the button
 
         super.onActivityCreated(savedInstanceState);
         final RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.recyclerView);
