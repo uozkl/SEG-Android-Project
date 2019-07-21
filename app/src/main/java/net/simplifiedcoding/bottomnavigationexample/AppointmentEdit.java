@@ -102,16 +102,19 @@ public class AppointmentEdit extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Display fragment
         return inflater.inflate(R.layout.fragment_appointment_edit, null);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
+        //Add listener to the button
+        //Load list for all the spinners
+        //Add hint for autocomplete textview
         super.onActivityCreated(savedInstanceState);
         final Button button_back = (Button) getActivity().findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ((MainActivity)getActivity()).loadFragment(new AppointmentInfo());
-                // your handler code here
             }
         });
         final Button button_submit = (Button) getActivity().findViewById(R.id.button_submit);
@@ -194,6 +197,7 @@ public class AppointmentEdit extends Fragment {
     }
 
     private void setSpinner(Spinner spinner,String[] list){
+        // Set the list in the spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -201,6 +205,7 @@ public class AppointmentEdit extends Fragment {
     }
 
     public void onSubmitButtonPressed() {
+        //Listener of the submit button. Save all the selection to the json
         new AlertDialog.Builder(getActivity()).setTitle("Do you want to submit this form?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -230,6 +235,7 @@ public class AppointmentEdit extends Fragment {
                 }).show();
     }
     public void onCancelButtonPressed() {
+        //Listener of the cancel button. Delete this appointment from JSON
         new AlertDialog.Builder(getActivity()).setTitle("Do you want to cancel this appointment?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -247,6 +253,7 @@ public class AppointmentEdit extends Fragment {
     }
 
     public long genId(){
+        //Generate appointment id from current selection
         String year,month,date,hour,minute,ran;
         year=spinner_y.getSelectedItem().toString().substring(2,4);
         month=String.valueOf(spinner_m.getSelectedItemId()+1);
@@ -268,6 +275,7 @@ public class AppointmentEdit extends Fragment {
     }
 
     public String genTime(){
+        //Generate appointment time from current selection
         String year,month,date,hour,minute;
         year=spinner_y.getSelectedItem().toString();
         month=spinner_m.getSelectedItem().toString();
