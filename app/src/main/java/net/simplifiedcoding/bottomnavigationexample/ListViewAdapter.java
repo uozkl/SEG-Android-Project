@@ -19,6 +19,7 @@ public class ListViewAdapter extends BaseAdapter {
     private List<HospitalNames> hospitalNamesList = null;
     private ArrayList<HospitalNames> arraylist;
 
+    //constructor
     public ListViewAdapter(Context context, List<HospitalNames> hospitalNamesList) {
         mContext = context;
         this.hospitalNamesList = hospitalNamesList;
@@ -32,16 +33,19 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
+    //count the list item amount
     public int getCount() {
         return hospitalNamesList.size();
     }
 
     @Override
+    //get item by position
     public HospitalNames getItem(int position) {
         return hospitalNamesList.get(position);
     }
 
     @Override
+    //get item id by position
     public long getItemId(int position) {
         return position;
     }
