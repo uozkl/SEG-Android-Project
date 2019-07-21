@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import java.util.List;
 
 /**
- * Created by Belal on 1/23/2018.
+ * Created by Anbo.
  */
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
@@ -53,6 +53,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
+        //on activity create event handler
         super.onActivityCreated(savedInstanceState);
         cardview1=(CardView)getActivity().findViewById(R.id.homeCardView);
         cardview2=(CardView)getActivity().findViewById(R.id.appointCardView);
@@ -62,6 +63,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
+        //onclick event handler
         switch (view.getId()){
             case R.id.appointCardView : ((MainActivity)getActivity()).loadFragment(new Appointment());break;
             case R.id.homeCardView : ((MainActivity)getActivity()).loadFragment(new Queue());break;
