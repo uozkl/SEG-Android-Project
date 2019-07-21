@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+//Created functional handler for signup page
 public class Signup extends AppCompatActivity {
 
     EditText field1;
@@ -17,6 +17,7 @@ public class Signup extends AppCompatActivity {
     EditText field6;
 
     @Override
+    //handler
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_page);
@@ -28,11 +29,13 @@ public class Signup extends AppCompatActivity {
         field6 = findViewById(R.id.editText18);
     }
 
+    //handler for cancel button
     public void cancelClick(View v){
         Intent intent = new Intent(this, Signin.class);
         startActivity(intent);
     }
 
+    //handler for resiger button
     public void regiterClick(View v){
         if(field1.getText().toString().equals("USERNAME")||
                 field1.getText().toString().equals("PASSWORD")||
