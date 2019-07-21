@@ -26,6 +26,7 @@ public class JsonHandler {
     private String env=Environment.getExternalStorageDirectory().toString();
 
     public List<ItemAppointment> readAppointment(){
+        //Read appointment from the JSON file, return a list of item
         List<ItemAppointment> memberList = new ArrayList<>();
         try {
             String filePath= env+ "/appointments.json";
@@ -71,16 +72,19 @@ public class JsonHandler {
 
 
     public void addAppointment(ItemAppointment item){
+        //Add appointment from the JSON file
         writeAppointment(item,true);
     }
 
     public void removeAppointmentById(String id){
+        //Remove appointment from the JSON file
         long item_id=Long.parseLong(id);
         writeAppointment(new ItemAppointment(item_id,"","",""),false);
 
     }
 
     public void writeAppointment(ItemAppointment item, Boolean isAdd){
+        //Modify the appointments in the JSON file
         List<ItemAppointment> curr_appointment=readAppointment();
         if(isAdd){
             curr_appointment.add(item);
@@ -117,6 +121,7 @@ public class JsonHandler {
 
 
     public void initJsonFile(){
+        // Create a JSON file and fill with default value
         List<ItemAppointment> memberList = new ArrayList<>();
         String filePath = env + "/appointments.json";
         memberList.add(new ItemAppointment(Long.parseLong("190405153001"),"15:30 April 5, 2019","Aydin Matthews","Naneviet Hospital, 2586 Essendene Avenue, Abbotsford, British Columbia"));
@@ -150,6 +155,7 @@ public class JsonHandler {
     }
 
     public void setAppointmentSelection(String id){
+        //Save the id of the appointment selected for appointment info page
         File file = new File(env+ "/appointmentSelection");
         BufferedWriter output = null;
         try {
@@ -169,6 +175,7 @@ public class JsonHandler {
     }
 
     public ItemAppointment getAppointmentSelection(){
+        //Get the id of the appointment selected for appointment info page
         File file = new File(env+ "/appointmentSelection");
         StringBuilder text = new StringBuilder();
         try {
