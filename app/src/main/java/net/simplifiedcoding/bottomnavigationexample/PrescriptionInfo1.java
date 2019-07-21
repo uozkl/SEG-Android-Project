@@ -18,6 +18,7 @@ import java.util.List;
  */
 
 public class PrescriptionInfo1 extends Fragment {
+    // Prescription page 1
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
