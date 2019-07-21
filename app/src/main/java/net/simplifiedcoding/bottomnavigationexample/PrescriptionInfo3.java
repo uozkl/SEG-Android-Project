@@ -13,11 +13,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Belal on 1/23/2018.
- */
 
 public class PrescriptionInfo3 extends Fragment {
+    // Prescription page 3
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
