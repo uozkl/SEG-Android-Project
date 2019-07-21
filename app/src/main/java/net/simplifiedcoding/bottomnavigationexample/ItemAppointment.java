@@ -1,6 +1,7 @@
 package net.simplifiedcoding.bottomnavigationexample;
 
 public class ItemAppointment implements Comparable<ItemAppointment> {
+    //Appointment item with four attributes and getter setter function
     private long id;
     private String time;
     private String doctor;
